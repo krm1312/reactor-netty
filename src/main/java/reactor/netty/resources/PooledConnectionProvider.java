@@ -620,14 +620,14 @@ final class PooledConnectionProvider implements ConnectionProvider {
 			else {
 				Channel c = f.get();
 
-				if (!c.isActive()) {
-					//TODO is this case necessary
-					if (log.isDebugEnabled()) {
-						log.debug(format(c, "Immediately aborted pooled channel, re-acquiring new channel"));
-					}
-					disposableAcquire(sink, obs, pool);
-					return;
-				}
+//				if (!c.isActive()) {
+//					//TODO is this case necessary
+//					if (log.isDebugEnabled()) {
+//						log.debug(format(c, "Immediately aborted pooled channel, re-acquiring new channel"));
+//					}
+//					disposableAcquire(sink, obs, pool);
+//					return;
+//				}
 				if (c.eventLoop().inEventLoop()) {
 					run();
 				}
